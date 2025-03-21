@@ -1,0 +1,85 @@
+## This file is an explanation of how the script for simulating cancer voice data was created 
+## As well as how do you run the script (simulate_laryngeal_cancer.py) 
+
+
+Script Creation for Simulated Cancer Voice: 
+Creating a script that modulates voice waveforms to sound like a person with laryngeal cancer is a highly complex and sensitive task. It involves both audio processing and potentially deep learning models to accurately emulate the changes in voice caused by conditions like laryngeal cancer. 
+
+    Laryngeal cancer can affect the voice in various ways, such as: 
+    
+    Hoarseness – caused by a change in vocal cord structure. 
+    
+    Breathy voice – due to reduced vocal fold vibration. 
+    
+    Pitch shifts – either lower or irregular pitch. 
+    
+    Tremor or strained voice – due to tension or irregularities in the vocal folds. 
+
+Simulating this effect accurately would involve: 
+
+    Waveform analysis and modification based on the desired symptoms. 
+    
+    Formant shifting (affecting vocal resonance). 
+    
+    Pitch shifting. 
+    
+    Adding noise or distortion (simulating voice quality degradation). 
+
+While it's not feasible to achieve highly accurate simulation of laryngeal cancer voice modification with basic scripting tools, we can still attempt to create a script that adds noise, pitch distortion, and formant changes to simulate a voice with this condition. 
+
+The script provided used pydub for audio manipulation and librosa for pitch and formant manipulation, combined with ffmpeg for input/output operations. 
+
+Prerequisites: 
+
+    sudo apt install ffmpeg 
+    
+    pip install pydub librosa 
+
+Explanation of Steps in the script: 
+
+    Add Noise: Adds random noise to simulate breathiness and irregularities in voice quality. 
+    
+    Pitch Shift: Shifts the pitch of the voice downward to simulate hoarseness. This is a simplified simulation of how a person with laryngeal cancer might have a deeper, raspier voice. 
+    
+    Formant Shifting: Changes the resonant frequencies of the voice, simulating alterations in the vocal tract due to cancer. This can make the voice sound more muffled or distorted. 
+
+How to Use The Script:  
+
+    Save the Script: Once you have saved the simulate_laryngeal_cancer.py 
+    
+    Edit Folder Paths: Modify the input_folder and output_folder paths to the correct locations. 
+    
+    Run the Script: python3 simulate_laryngeal_cancer.py 
+  
+
+Example Output: 
+
+For each .wav file in the input_folder, the script will process it and save the result as a new .wav file in the output_folder, with a modified voice that simulates the effects of laryngeal cancer. 
+
+Limitations: 
+
+Accuracy: This script is a simplified approach and does not perfectly simulate the complexities of how cancer affects the voice. A real simulation would require more sophisticated techniques such as deep learning models trained on speech data of people with laryngeal cancer. 
+
+Subjective Experience: The effects may not sound exactly like a person with laryngeal cancer, but it gives a rough approximation with pitch shift, formant alteration, and noise addition. 
+
+Next Steps for Realistic Simulation: 
+
+For more accurate simulations, you would need: 
+
+A dataset of real voice recordings from people with laryngeal cancer. 
+
+Use of machine learning models or voice synthesis models such as Tacotron or WaveNet. 
+
+Notes:
+
+If time stretch error occurs: 
+
+The error you're encountering is due to an incorrect use of the time_stretch function from librosa. Specifically, librosa.effects.time_stretch() requires only two arguments: the audio signal (y) and a rate parameter. The formant shifting, which alters the resonance of the voice, was attempted incorrectly. 
+
+Here's how we can correct the issue and achieve the goal: 
+
+Formant Shifting: Unfortunately, librosa doesn't have a direct method for formant shifting (i.e., changing the resonance of the vocal tract). Formant shifting typically requires more specialized techniques like manipulating the spectral envelope of the signal. However, for simplicity, we can adjust the pitch and tempo independently. 
+
+Pitch Shifting & Time Stretching: While we can manipulate pitch using librosa.effects.pitch_shift(), formant shifting would require more sophisticated techniques. Instead of formant shifting, we can apply a time-stretching effect with a rate that affects the tempo and pitch. 
+
+ 
