@@ -3,7 +3,67 @@ This repository provides training and prediction AI models for detecting abnorma
 
 This model uses CNN to get features from raw data instead of using MFCC.  
 
-It gave a prediction accuracy of ~72-88% on training data of ~180 samples and eval data of ~24 samples  
+It gave a prediction accuracy of ~72-88% on training data of ~180 samples and eval data of ~24 samples
+
+# Explantion on The Model (train_audio_model.py) 
+
+This AI model was created in TensorFlow that takes raw audio files (in .wav format), processes them using Convolutional Neural Networks (CNNs) and classifies the voice as either "normal" or from a person with a disease. 
+
+1) Loading Audio Files: 
+
+  The load_audio_files function loads .wav files from a directory. The audio files are loaded using librosa.load() with a specified SAMPLE_RATE. 
+  
+  Audio files are padded or truncated to the MAX_LENGTH to ensure consistency in input size. 
+
+ 2) Preprocessing: 
+
+  Raw waveforms are directly used as features. We reshape the data to make it compatible with CNNs by adding a channel dimension (1 for mono audio). 
+
+3) Model Architecture: 
+
+The model is a 1D Convolutional Neural Network (CNN), which is well-suited for analyzing time-series data like audio waveforms. 
+
+The model consists of three convolutional layers followed by max-pooling and fully connected layers. The output is a single neuron with a sigmoid activation function for binary classification (normal or disease). 
+
+4) Training: 
+
+ The model is compiled using the Adam optimizer and binary cross-entropy loss function since it is a binary classification problem. 
+
+ The model is trained for 10 epochs with a batch size of 32. 
+
+5) Model Evaluation: 
+
+  After training, the model is evaluated on the test set, and accuracy is printed. 
+
+6) Visualization (optional): 
+
+  A simple plot visualizes the training and validation accuracy over epochs to check if the model is overfitting or underfitting. 
+
+Important Notes: 
+
+Data Preprocessing: Ensure that your audio data is consistent in terms of length. Padding/truncating to a fixed length (e.g., 1 second of audio) is necessary for feeding the raw waveforms into the neural network. 
+
+Model Choice: The CNN model works well with raw audio waveforms because it can learn spatial hierarchies in the data. For more complex time dependencies, you could also try Recurrent Neural Networks (RNNs) like LSTMs or GRUs. 
+
+Dataset: Ensure you have a balanced dataset with sufficient labeled samples for training. The labels should be clearly defined as "normal" and "disease." 
+
+This is a basic implementation, and you can further improve the model by adding data augmentation, regularization, hyperparameter tuning, or exploring more advanced architectures like 1D CNN + RNN hybrid models. 
+
+Troubleshooting and Tips 
+
+  Audio File Format: Ensure that all audio files are in .wav format. If your files are in a different format (e.g., .mp3), use a tool like ffmpeg or librosa to convert them to .wav files. 
+  
+  Memory Issues: If you're working with a large dataset, you might run into memory issues. In this case, you can: 
+  
+  Use a smaller dataset for testing. 
+  
+  Reduce the length of the audio or perform downsampling. 
+  
+  Use ImageDataGenerator or similar techniques to load and preprocess data in batches rather than all at once. 
+  
+  Model Performance: If the model doesn't perform well, consider tuning hyperparameters, increasing the model's complexity, or using data augmentation techniques (e.g., pitch shifting, time stretching) to improve the generalization. 
+  
+  Feature Engineering: If you decide to experiment with other features (like MFCCs), you can modify the code to extract those features instead of using raw waveforms. However, this code assumes you're working with raw audio for automatic feature extraction. 
 
 # How To Train The Model
 
