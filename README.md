@@ -5,7 +5,7 @@ This model uses CNN to get features from raw data instead of using MFCC.
 
 It gave a prediction accuracy of ~72-88% on training data of ~180 samples and eval data of ~24 samples
 
-# Explantion on The Model (train_audio_model.py) 
+# Explantion on The Model 
 
 This AI model was created in TensorFlow that takes raw audio files (in .wav format), processes them using Convolutional Neural Networks (CNNs) and classifies the voice as either "normal" or from a person with a disease. 
 
@@ -65,7 +65,7 @@ Troubleshooting and Tips
   
   Feature Engineering: If you decide to experiment with other features (like MFCCs), you can modify the code to extract those features instead of using raw waveforms. However, this code assumes you're working with raw audio for automatic feature extraction. 
 
-# How To Train The Model
+# How To Train The Script To Generate a Trained Model
 
 To run the python script (train_audio_model.py) to generate a trained model for detecting larynx disease in voice data, you'll need to follow a few key steps to set up your environment, prepare the data, and execute the code. 
 Here's a guide to help you run the code effectively: 
