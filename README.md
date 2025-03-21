@@ -74,7 +74,7 @@ Use the prediction Python script provided in this repository.
 
 Make sure to change the paths for NORMAL_AUDIO_PATH and DISEASED_AUDIO_PATH to point to the actual locations of your audio data. 
 
-# Modify these paths to where your audio files are located 
+Modify these paths to where your audio files are located 
 
 NORMAL_AUDIO_PATH = 'path_to_normal_audio_files/*.wav' 
 
