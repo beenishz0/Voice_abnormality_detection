@@ -2,9 +2,9 @@
 This repository provides a script to generate an AI model that can be trained on voice dataset for predicting voice abnormalities like laryngeal cancer. 
 Additionally, the repository includes a prediction script to test the trained model on new datasets, as well as scripts on how to generate synthesized voice data from text and simulate cancer voice. 
 
-This model uses CNN to get features from raw data instead of using MFCC.  
+The model generated uses CNN to get features from raw data instead of using MFCC.  
 
-It gave a prediction accuracy of ~72-88% on training data of ~180 samples and eval data of ~24 samples
+It gave a prediction accuracy of ~72-88% on training data of ~180 samples and eval data of ~24 samples running on a 2S server CPU system with Ubuntu OS. 
 
 # Explantion on The Model 
 
