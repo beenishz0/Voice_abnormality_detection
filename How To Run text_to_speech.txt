@@ -1,0 +1,47 @@
+# Generating Synthetic Data 
+
+Generating synthetic speech data for 100+ different people reading the Rainbow passage can be done in several way. 
+We decided to use Google Cloud Text-to-Speech API 
+Google Cloud provides a high-quality Text-to-Speech API that supports multiple voices, languages, and accents, which will give you diverse voice recordings. 
+
+Below are the steps, we followed to generate the synthetic dataset: 
+
+1) Set up Google Cloud: 
+
+Create a Google Cloud account if you don’t have one here. 
+
+Enable the Text-to-Speech API in the Google Cloud Console. 
+
+Create an API key to authenticate requests.  
+
+key=API_KEY 
+
+Install Google Cloud Client Library: You need to install the Google Cloud TTS client library in Python. 
+
+pip install google-cloud-texttospeech 
+
+You might need to install google_cloud_sdk , which can be done as follows on Ubuntu OS: 
+
+sudo snap install google-cloud-sdk --classic 
+check it is installed: gcloud –version 
+
+2) Use the provided text_to_speech.py python script to Generate Speech
+Make sure to set GOOGLE_APPLICATION_CREDENTIALS environment variable in the script correctly to your local credentials file. 
+
+3) What the script does: 
+
+Voices: It uses different voices from Google Cloud's Text-to-Speech API. 
+
+100 Audio Files: It generates 100 audio files in the .wav format, each with a different voice. 
+
+Output Folder: All generated files are saved in the generated_audio folder. 
+
+4) Running the script: 
+
+Save the script as text_to_speech.py. 
+
+Set up your Google Cloud credentials and run the script: 
+
+python3 text_to_speech.py
+
+ 
