@@ -1,3 +1,6 @@
+## Script to generate synthetic distinct voice data using Google Cloud Speech to text API. 
+## Example here is to generate 2000 unique voice data all reading a part of the Rainbow Passage
+
 from google.cloud import texttospeech
 
 import os
@@ -7,7 +10,7 @@ import os
 # Authenticate with your API key (make sure to set GOOGLE_APPLICATION_CREDENTIALS environment variable)
 
 #export
-GOOGLE_APPLICATION_CREDENTIALS="/home/lab_phe3223/AI_voice/credentials/verdant-oven-445617-r4-850725ab4150.json"
+GOOGLE_APPLICATION_CREDENTIALS="replace_with_your_path_to_the_credentials_file.json"
 
 
 
@@ -31,7 +34,7 @@ voices = [
 
 # Output directory
 
-output_dir = "normal_synthesized_audio_2000"
+output_dir = "synthesized_audio"
 
 if not os.path.exists(output_dir):
 
@@ -39,7 +42,7 @@ if not os.path.exists(output_dir):
 
 
 
-for i in range(2000):
+for i in range(2000)       # in this example it's generating 2000 samples, you can change the number to your desired number of training datasets
 
     # Choose a random voice from the list
 
