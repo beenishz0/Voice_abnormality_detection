@@ -5,7 +5,7 @@ This model uses CNN to get features from raw data instead of using MFCC.
 
 It gave a prediction accuracy of ~72-88% on training data of ~180 samples and eval data of ~24 samples  
 
-**How To Train The Model**
+# How To Train The Model
 
 To run the python script (train_audio_model.py) to generate a trained model for detecting larynx disease in voice data, you'll need to follow a few key steps to set up your environment, prepare the data, and execute the code. 
 Here's a guide to help you run the code effectively: 
@@ -18,13 +18,13 @@ Make sure you have Python installed on your system, along with all the necessary
 
 This helps isolate dependencies for your project: 
 
-# On Linux/macOS 
+On Linux/macOS 
 
 python3 -m venv larynx-env 
 
-# Activate the virtual environment 
+Activate the virtual environment 
 
-# On Linux/macOS 
+On Linux/macOS 
 
 source larynx-env/bin/activate 
 
@@ -117,7 +117,7 @@ Replace the paths in the script with the actual file path of a new .wav audio fi
 
 After training, the model is saved as larynx_disease_model.h5 using model.save(). To load the trained model later for predictions, you can use: 
 
-# Load the saved model 
+Load the saved model 
 
 model = tf.keras.models.load_model('larynx_disease_model.keras') 
 
@@ -142,7 +142,7 @@ Shape Mismatch: If you get an error about input shapes, ensure that all audio fe
 
 By following these steps, you'll have a working environment to train and test the model for classifying voices as either normal or from a person with larynx disease. You can then further improve the model by fine-tuning the parameters or using more advanced neural network architectures. 
 
-**How to Use the Script:** 
+# How to Use the Prediction Script 
 
 Save the Trained Model: After training your model, make sure to save it using the following code (already included in the training script): 
 
