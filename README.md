@@ -65,7 +65,7 @@ Troubleshooting and Tips
   
   Feature Engineering: If you decide to experiment with other features (like MFCCs), you can modify the code to extract those features instead of using raw waveforms. However, this code assumes you're working with raw audio for automatic feature extraction. 
 
-# How To Train The Script To Generate a Trained Model
+# How To Run The Script To Generate a Trained Model
 
 To run the python script (train_audio_model.py) to generate a trained model for detecting larynx disease in voice data, you'll need to follow a few key steps to set up your environment, prepare the data, and execute the code. 
 Here's a guide to help you run the code effectively: 
@@ -90,37 +90,37 @@ source larynx-env/bin/activate
 
 1.2 Install Required Libraries 
 
-Install the required libraries using pip. The libraries needed for the code include: 
-
-TensorFlow 
-
-Librosa (for audio processing) 
-
-Matplotlib (for plotting) 
-
-Scikit-learn (for splitting the dataset) 
-
-NumPy 
-
-Run the following commands to install these dependencies: 
-
-pip install tensorflow librosa matplotlib scikit-learn numpy 
+  Install the required libraries using pip. The libraries needed for the code include: 
+  
+  TensorFlow 
+  
+  Librosa (for audio processing) 
+  
+  Matplotlib (for plotting) 
+  
+  Scikit-learn (for splitting the dataset) 
+  
+  NumPy 
+  
+  Run the following commands to install these dependencies: 
+  
+  pip install tensorflow librosa matplotlib scikit-learn numpy 
 
 2. Prepare the Dataset 
 
-You need a labeled dataset of normal and diseased voice samples. The code assumes you have two folders containing audio files (.wav format): 
-
-Normal voice recordings: Store these in the folder path_to_normal_audio_files/. 
-
-Diseased voice recordings: Store these in the folder path_to_diseased_audio_files/. 
-
-Make sure the audio files are in WAV format, as the code uses librosa.load() to read .wav files. 
-
-You can create these directories like this: 
-
-mkdir path_to_normal_audio_files 
-
-mkdir path_to_diseased_audio_files 
+  You need a labeled dataset of normal and diseased voice samples. The code assumes you have two folders containing audio files (.wav format): 
+  
+  Normal voice recordings: Store these in the folder path_to_normal_audio_files/. 
+  
+  Diseased voice recordings: Store these in the folder path_to_diseased_audio_files/. 
+  
+  Make sure the audio files are in WAV format, as the code uses librosa.load() to read .wav files. 
+  
+  You can create these directories like this: 
+  
+  mkdir path_to_normal_audio_files 
+  
+  mkdir path_to_diseased_audio_files 
 
 3. Run the Code 
 
@@ -132,16 +132,16 @@ Use the prediction Python script provided in this repository.
 
 3.2 Modify the Dataset Paths 
 
-Make sure to change the paths for NORMAL_AUDIO_PATH and DISEASED_AUDIO_PATH to point to the actual locations of your audio data. 
-
-Modify these paths to where your audio files are located 
-
-NORMAL_AUDIO_PATH = 'path_to_normal_audio_files/*.wav' 
-
-DISEASED_AUDIO_PATH = 'path_to_diseased_audio_files/*.wav' 
-
- 
-If you're unsure about your audio files' format, you can check with librosa by printing the y array from librosa.load() to inspect the audio data. 
+  Make sure to change the paths for NORMAL_AUDIO_PATH and DISEASED_AUDIO_PATH to point to the actual locations of your audio data. 
+  
+  Modify these paths to where your audio files are located 
+  
+  NORMAL_AUDIO_PATH = 'path_to_normal_audio_files/*.wav' 
+  
+  DISEASED_AUDIO_PATH = 'path_to_diseased_audio_files/*.wav' 
+  
+   
+  If you're unsure about your audio files' format, you can check with librosa by printing the y array from librosa.load() to inspect the audio data. 
 
 3.3 Execute the Script 
 
