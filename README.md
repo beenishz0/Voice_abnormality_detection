@@ -1,5 +1,6 @@
 # Voice_abnormality_detection
-This repository provides training and prediction AI models for detecting abnormalities on raw audio files. Includes tests from simulated datasets. 
+This repository provides a script to generate an AI model that can be trained on voice dataset for predicting voice abnormalities like laryngeal cancer. 
+Additionally, the repository includes a prediction script to test the trained model on new datasets, as well as scripts on how to generate synthesized voice data from text and simulate cancer voice. 
 
 This model uses CNN to get features from raw data instead of using MFCC.  
 
