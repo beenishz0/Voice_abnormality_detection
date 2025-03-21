@@ -179,7 +179,7 @@ After training, the model is saved as larynx_disease_model.h5 using model.save()
 
 Load the saved model 
 
-model = tf.keras.models.load_model('larynx_disease_model.keras') 
+model = tf.keras.models.load_model('voice_abnormality_detection_model.keras') 
 
 7. Improvement and Adjustments 
 
@@ -206,7 +206,7 @@ By following these steps, you'll have a working environment to train and test th
 
 Save the Trained Model: After training your model, make sure to save it using the following code (already included in the training script): 
 
-model.save("larynx_disease_model.keras") 
+model.save("voice_abnormality_detection_model.keras") 
   
 
 Ensure that the saved model file is in the correct directory or update MODEL_PATH accordingly. 
